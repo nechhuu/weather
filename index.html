@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="weather-container">
+        <div class="main-card">
+          <div class="main-content">
+            <div class="date-location">
+              <h1 id="day" class="day">Tuesday</h1>
+              <p id="date" class="date">20 Jun 2022</p>
+              <div class="location-badge">
+                <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span id="location">Biarritz, FR</span>
+              </div>
+            </div>
+
+            <div class="current-weather">
+              <div class="weather-icon">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                  <circle cx="60" cy="60" r="30" fill="currentColor"/>
+                  <line x1="60" y1="10" x2="60" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                  <line x1="60" y1="95" x2="60" y2="110" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                  <line x1="110" y1="60" x2="95" y2="60" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                  <line x1="25" y1="60" x2="10" y2="60" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                  <line x1="95" y1="25" x2="85" y2="35" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                  <line x1="35" y1="85" x2="25" y2="95" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                  <line x1="95" y1="95" x2="85" y2="85" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                  <line x1="35" y1="35" x2="25" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p id="temperature" class="temperature">29 °C</p>
+              <p id="weatherDescription" class="weather-description">Sunny</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <div class="stats-card">
+            <div class="weather-stats">
+              <div class="stat-item">
+                <span class="stat-label">PRECIPITATION</span>
+                <span id="precipitation" class="stat-value">0%</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">HUMIDITY</span>
+                <span id="humidity" class="stat-value">42%</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">WIND</span>
+                <span id="wind" class="stat-value">3 km/h</span>
+              </div>
+            </div>
+
+            <div class="forecast-container">
+              <div class="forecast-grid">
+                <div class="forecast-item">
+                  <svg class="forecast-icon" width="55" height="55" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="60" r="30" fill="currentColor"/>
+                    <line x1="60" y1="10" x2="60" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="60" y1="95" x2="60" y2="110" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="110" y1="60" x2="95" y2="60" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="25" y1="60" x2="10" y2="60" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+                  <span class="forecast-day">Tue</span>
+                  <span id="forecast-0" class="forecast-temp">30 °C</span>
+                </div>
+                <div class="forecast-item forecast-item-dark">
+                  <svg class="forecast-icon" width="55" height="55" viewBox="0 0 120 120" fill="none">
+                    <circle cx="50" cy="45" r="15" fill="currentColor"/>
+                    <path d="M35 75 Q 40 70, 50 70 T 65 75 Q 70 80, 75 75 Q 80 70, 90 70 Q 95 70, 95 75 Q 95 85, 85 85 L 45 85 Q 35 85, 35 75 Z" fill="currentColor" opacity="0.7"/>
+                  </svg>
+                  <span class="forecast-day">Wed</span>
+                  <span id="forecast-1" class="forecast-temp">22 °C</span>
+                </div>
+                <div class="forecast-item forecast-item-dark">
+                  <svg class="forecast-icon" width="55" height="55" viewBox="0 0 120 120" fill="none">
+                    <path d="M30 60 Q 35 50, 45 50 T 60 55 Q 65 60, 70 55 Q 75 50, 85 50 Q 95 50, 95 60 Q 95 75, 80 75 L 45 75 Q 30 75, 30 60 Z" fill="currentColor"/>
+                    <line x1="45" y1="80" x2="45" y2="90" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="55" y1="85" x2="55" y2="95" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                  <span class="forecast-day">Thu</span>
+                  <span id="forecast-2" class="forecast-temp">06 °C</span>
+                </div>
+                <div class="forecast-item forecast-item-dark">
+                  <svg class="forecast-icon" width="55" height="55" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="60" r="30" fill="currentColor"/>
+                    <line x1="60" y1="10" x2="60" y2="25" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="60" y1="95" x2="60" y2="110" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+                  <span class="forecast-day">Fry</span>
+                  <span id="forecast-3" class="forecast-temp">26 °C</span>
+                </div>
+              </div>
+            </div>
+
+            <button id="changeLocationBtn" class="change-location-btn">
+              <svg width="33" height="33" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Change Location</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="locationModal" class="modal">
+      <div class="modal-content">
+        <h2>Change Location</h2>
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter city name..."
+          class="city-input"
+        />
+        <div class="modal-actions">
+          <button id="cancelBtn" class="btn btn-secondary">Cancel</button>
+          <button id="confirmBtn" class="btn btn-primary">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
