@@ -24,7 +24,7 @@ body {
 
 .weather-container {
   display: flex;
-  gap: 1.5rem;
+  gap: 0;
   flex-wrap: wrap;
 }
 
@@ -32,7 +32,7 @@ body {
   width: 493px;
   height: 666px;
   background: linear-gradient(135deg, #87CEEB 0%, #6B9BD1 50%, #5B7BA8 100%);
-  border-radius: 25px;
+  border-radius: 25px 0 0 25px;
   position: relative;
   overflow: hidden;
   transition: background 0.5s ease;
@@ -113,7 +113,7 @@ body {
 
 .stats-card {
   background-color: #222831;
-  border-radius: 25px;
+  border-radius: 0 25px 25px 0;
   padding: 2rem;
   height: 666px;
   display: flex;
@@ -149,14 +149,14 @@ body {
 .forecast-container {
   background-color: rgba(39, 45, 55, 0.99);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 0;
   margin-bottom: 1.5rem;
 }
 
 .forecast-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  gap: 0;
 }
 
 .forecast-item {
@@ -293,10 +293,14 @@ body {
   color: white;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 601px) {
   .weather-container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .main-card {
+    border-radius: 25px 25px 0 0;
   }
 
   .sidebar {
@@ -306,6 +310,7 @@ body {
   }
 
   .stats-card {
+    border-radius: 0 0 25px 25px;
     height: auto;
   }
 }
@@ -315,34 +320,219 @@ body {
     padding: 1rem;
   }
 
+  .weather-container {
+    flex-direction: row;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+
   .main-card {
-    width: 100%;
-    height: 500px;
+    width: 246px;
+    height: 333px;
+    border-radius: 12px 0 0 12px;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .date-location {
+    gap: 0.25rem;
   }
 
   .day {
-    font-size: 28px;
-  }
-
-  .date {
     font-size: 18px;
   }
 
+  .date {
+    font-size: 11px;
+  }
+
+  .location-badge {
+    font-size: 10px;
+    margin-top: 0.5rem;
+  }
+
+  .location-badge svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .current-weather {
+    padding-bottom: 1rem;
+  }
+
+  .weather-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+  }
+
   .temperature {
-    font-size: 40px;
+    font-size: 25px;
+    margin: 0 0 0.25rem 0;
   }
 
   .weather-description {
-    font-size: 24px;
+    font-size: 15px;
+  }
+
+  .sidebar {
+    min-width: unset;
+    flex: 1;
+    max-width: 232px;
+  }
+
+  .stats-card {
+    border-radius: 0 12px 12px 0;
+    padding: 1rem;
+    height: 333px;
+  }
+
+  .weather-stats {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .stat-label,
   .stat-value {
-    font-size: 20px;
+    font-size: 14px;
+  }
+
+  .forecast-container {
+    padding: 0;
+    margin-bottom: 0.75rem;
   }
 
   .forecast-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .forecast-item {
+    padding: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .forecast-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .forecast-day {
+    font-size: 10px;
+  }
+
+  .forecast-temp {
+    font-size: 10px;
+  }
+
+  .change-location-btn {
+    height: 26px;
+    font-size: 10px;
+  }
+
+  .change-location-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .main-card {
+    width: 197px;
+    height: 266px;
+  }
+
+  .main-content {
+    padding: 0.8rem;
+  }
+
+  .day {
+    font-size: 15px;
+  }
+
+  .date {
+    font-size: 9px;
+  }
+
+  .location-badge {
+    font-size: 8px;
+    margin-top: 0.3rem;
+  }
+
+  .location-badge svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .weather-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.4rem;
+  }
+
+  .temperature {
+    font-size: 20px;
+  }
+
+  .weather-description {
+    font-size: 12px;
+  }
+
+  .sidebar {
+    max-width: 186px;
+  }
+
+  .stats-card {
+    padding: 0.8rem;
+    height: 266px;
+  }
+
+  .weather-stats {
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .stat-label,
+  .stat-value {
+    font-size: 11px;
+  }
+
+  .forecast-container {
+    margin-bottom: 0.6rem;
+  }
+
+  .forecast-item {
+    padding: 0.4rem 0.2rem;
+    gap: 0.2rem;
+  }
+
+  .forecast-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .forecast-day {
+    font-size: 8px;
+  }
+
+  .forecast-temp {
+    font-size: 8px;
+  }
+
+  .change-location-btn {
+    height: 21px;
+    font-size: 8px;
+    gap: 0.2rem;
+  }
+
+  .change-location-btn svg {
+    width: 13px;
+    height: 13px;
   }
 }
